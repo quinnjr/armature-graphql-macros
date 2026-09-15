@@ -152,7 +152,7 @@ fn resolver_impl2(
 
     let input: ItemImpl = syn::parse2(item)?;
 
-    if let Some((_, path, _)) = &input.trait_ {
+    if let Some((path, _)) = &input.trait_ {
         return Err(Error::new_spanned(
             path,
             "#[resolver] must be applied to an inherent `impl TypeName { ... }` \
